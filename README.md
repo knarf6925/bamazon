@@ -13,4 +13,5 @@ The customer interface allows the user to view the current inventory of store it
 1. cd Bamazon
 1. node bamazonCustomer.js
 
-
+![Bamazon_1.png](https:/knarf6925.github.com/images/Bamazon_1.png)
+![Bamazon_2.png](https:/knarf6925.github.com/images/Bamazon_2.png)
