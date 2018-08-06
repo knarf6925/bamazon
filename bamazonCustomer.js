@@ -23,8 +23,9 @@ connection.connect(function(err) {
 
 var makeTable = function() {
     connection.query("SELECT * FROM products", function (err,res){
-    for (var i = 0; i ,res.length; i++){
-    console.log(res[i].itemID+"||"+
+        
+    for (var i = 0; i < res.length; i++){
+    console.log(res[i].itemid +"||"+
                 res[i].product_name+" || "+
                 res[i].dept_name+" || "+
                 res[i].price+" || "+
@@ -40,11 +41,11 @@ var promptCustomer = (function(res){
     inquirer.prompt([{
         type:"input",
         name: "choice",
-        message:"What would you like to purchase? [Quit with Q]"
+        message:"What would you like to purchase?"
 
     }]).then(function(answer){
         var correct = false;
-        for(var i=o;i,res.length;i++){
+        for(var i=0;i<res.length;i++){
             if(res[i].product_name==answer.choice){
                 correct=true;
                 var product=answer.choice;
@@ -77,5 +78,11 @@ var promptCustomer = (function(res){
                 })
             }
         }
+        if(i==res.length && correct==false) {
+            console.log("Not a valid selection");
+            promptCustomer(res);
+        }
+        
     })
 })
+
